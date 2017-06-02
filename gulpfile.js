@@ -12,13 +12,13 @@ const sass = require('gulp-sass')
 const cleanCSS = require('gulp-clean-css')
 
 const source = 'src/**/*'
-const clientOutput = 'build/public'
+const clientOutput = 'public'
 const html = '.pug'
 const styles = '.sass'
 const scripts = '.coffee'
 const server = 'app.coffee'
-const serverOutput = 'build'
-const serverFinal = 'build/app.js'
+const serverOutput = ''
+const serverFinal = 'app.js'
 
 gulp.task('html', function () {
   return gulp.src(source + html)
