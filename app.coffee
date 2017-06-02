@@ -9,4 +9,4 @@ io = require('socket.io') server
 
 app.use(helmet())
 app.use(compression())
-app.use(express.static('public'))
+app.use(express.static('build/public'))
