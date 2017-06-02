@@ -1,13 +1,17 @@
 {
-  "name": "boilerplate",
+  "name": "node_boilerplate",
   "version": "1.0.0",
   "description": "a boilerplate for all web-development projects",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "gulp"
   },
   "author": "Anton Outkine",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jetmate/node_boilerplate.git"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.1",
@@ -22,5 +26,9 @@
     "express": "^4.15.3",
     "helmet": "^3.6.1",
     "socket.io": "^2.0.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Jetmate/CTAMap/issues"
+  },
+  "homepage": "https://github.com/Jetmate/CTAMap#readme"
 }
