@@ -1,5 +1,5 @@
 {
-  "name": "Bio",
+  "name": "bio",
   "version": "1.0.0",
   "description": "My bio page",
   "main": "gulpfile.js",
@@ -8,10 +8,6 @@
   },
   "author": "Anton Outkine",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jetmate/node_boilerplate.git"
-  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.4.1",
@@ -22,12 +18,14 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
-    "compression": "^1.6.2",
-    "express": "^4.15.3",
-    "helmet": "^3.6.1"
+    "compression": "^1.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jetmate/jetmate.pages.io.git"
   },
   "bugs": {
-    "url": "https://github.com/Jetmate/bio/issues"
+    "url": "https://github.com/Jetmate/jetmate.pages.io/issues"
   },
-  "homepage": "https://github.com/Jetmate/bio#readme"
+  "homepage": "https://github.com/Jetmate/jetmate.pages.io#readme"
 }
