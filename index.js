@@ -1,5 +1,5 @@
 (function() {
-  var blightColor, canvas, cellColor, cells, ctx, drawCells, getSurroundingCount, gridHeight, gridWidth, i, j, makeGrid, randomCell, ref, ref1, tileHeight, tileWidth, updateCells, x, y;
+  var blightColor, canvas, cellColor, cellSpawnTime, cellSpawnWait, cellUpdateTime, cellUpdateWait, cells, ctx, drawCells, getSurroundingCount, gridHeight, gridWidth, i, j, makeGrid, randomCell, ref, ref1, tileHeight, tileWidth, update, updateCells, x, y;
 
   drawCells = function(cells, cellWidth, cellHeight, cellColor, blightColor) {
     var cell, cells_x, i, len, results, x, y;
@@ -147,13 +147,27 @@
 
   drawCells(cells, tileWidth, tileHeight);
 
-  setInterval(function() {
-    return randomCell(cells);
-  }, 1000);
+  cellUpdateTime = 0;
 
-  setInterval(function() {
-    cells = updateCells(cells);
-    return drawCells(cells, tileWidth, tileHeight, cellColor, blightColor);
-  }, 100);
+  cellUpdateWait = 100;
+
+  cellSpawnTime = 0;
+
+  cellSpawnWait = 1000;
+
+  update = function(timeStamp) {
+    if (timeStamp - cellUpdateTime > cellUpdateWait) {
+      cellUpdateTime = timeStamp;
+      cells = updateCells(cells);
+      drawCells(cells, tileWidth, tileHeight, cellColor, blightColor);
+    }
+    if (timeStamp - cellSpawnTime > cellSpawnWait) {
+      cellSpawnTime = timeStamp;
+      randomCell(cells);
+    }
+    return window.requestAnimationFrame(update);
+  };
+
+  window.requestAnimationFrame(update);
 
 }).call(this);
