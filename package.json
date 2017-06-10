@@ -1,7 +1,7 @@
 {
-  "name": "node_boilerplate",
+  "name": "Bio",
   "version": "1.0.0",
-  "description": "a boilerplate for all web-development projects",
+  "description": "My bio page",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp"
@@ -24,11 +24,10 @@
   "dependencies": {
     "compression": "^1.6.2",
     "express": "^4.15.3",
-    "helmet": "^3.6.1",
-    "socket.io": "^2.0.2"
+    "helmet": "^3.6.1"
   },
   "bugs": {
-    "url": "https://github.com/Jetmate/CTAMap/issues"
+    "url": "https://github.com/Jetmate/bio/issues"
   },
-  "homepage": "https://github.com/Jetmate/CTAMap#readme"
+  "homepage": "https://github.com/Jetmate/bio#readme"
 }
