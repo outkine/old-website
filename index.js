@@ -1,7 +1,7 @@
 (function() {
   var blightColor, canvas, cellColor, cellSpawnTime, cellSpawnWait, cellUpdateTime, cellUpdateWait, cells, changeSize, ctx, drawCells, drawOutline, getSurroundingCount, gridHeight, gridWidth, makeGrid, outlineColor, randomCell, ref, tileHeight, tileWidth, update, updateCells;
 
-  $(document).on('click touch', function() {
+  $('#hide-content').on('click touch', function() {
     if ($('#content').css('visibility') === 'visible') {
       return $('#content').css('visibility', 'hidden');
     } else {
