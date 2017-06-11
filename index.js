@@ -1,5 +1,13 @@
 (function() {
-  var blightColor, canvas, cellColor, cellSpawnTime, cellSpawnWait, cellUpdateTime, cellUpdateWait, cells, ctx, drawCells, getSurroundingCount, gridHeight, gridWidth, i, j, makeGrid, randomCell, ref, ref1, tileHeight, tileWidth, update, updateCells, x, y;
+  var blightColor, canvas, cellColor, cellSpawnTime, cellSpawnWait, cellUpdateTime, cellUpdateWait, cells, changeSize, ctx, drawCells, drawOutline, getSurroundingCount, gridHeight, gridWidth, makeGrid, outlineColor, randomCell, ref, tileHeight, tileWidth, update, updateCells;
+
+  $('#hide-content').click(function() {
+    if ($('#content').css('visibility') === 'visible') {
+      return $('#content').css('visibility', 'hidden');
+    } else {
+      return $('#content').css('visibility', 'visible');
+    }
+  });
 
   drawCells = function(cells, cellWidth, cellHeight, cellColor, blightColor) {
     var cell, cells_x, i, len, results, x, y;
@@ -105,11 +113,32 @@
     return results;
   };
 
+  changeSize = function() {
+    canvas.width = $(document).width();
+    canvas.height = $(document).height();
+    return [Math.floor(canvas.width / tileWidth), Math.floor(canvas.height / tileHeight)];
+  };
+
+  drawOutline = function(color, gridWidth, gridHeight, tileWidth, tileHeight) {
+    var i, j, ref, ref1, results, x, y;
+    ctx.strokeStyle = color;
+    for (x = i = 0, ref = gridWidth - 1; 0 <= ref ? i <= ref : i >= ref; x = 0 <= ref ? ++i : --i) {
+      ctx.beginPath();
+      ctx.moveTo(x * tileWidth, 0);
+      ctx.lineTo(x * tileWidth, canvas.height);
+      ctx.stroke();
+    }
+    results = [];
+    for (y = j = 0, ref1 = gridHeight - 1; 0 <= ref1 ? j <= ref1 : j >= ref1; y = 0 <= ref1 ? ++j : --j) {
+      ctx.beginPath();
+      ctx.moveTo(0, y * tileHeight);
+      ctx.lineTo(canvas.width, y * tileHeight);
+      results.push(ctx.stroke());
+    }
+    return results;
+  };
+
   canvas = $('canvas')[0];
-
-  canvas.width = $(document).width();
-
-  canvas.height = $(document).height();
 
   ctx = canvas.getContext('2d');
 
@@ -117,35 +146,21 @@
 
   tileHeight = 20;
 
-  gridWidth = Math.floor(canvas.width / tileWidth);
+  ref = changeSize(), gridWidth = ref[0], gridHeight = ref[1];
 
-  gridHeight = Math.floor(canvas.height / tileHeight);
+  outlineColor = '#E5E5E5';
 
-  ctx.strokeStyle = '#a3a3a3';
+  cellColor = '#A6C0C5';
 
-  cellColor = '#999999';
+  blightColor = '#F5968C';
 
-  blightColor = '#e05353';
-
-  for (x = i = 0, ref = gridWidth - 1; 0 <= ref ? i <= ref : i >= ref; x = 0 <= ref ? ++i : --i) {
-    ctx.beginPath();
-    ctx.moveTo(x * tileWidth, 0);
-    ctx.lineTo(x * tileWidth, canvas.height);
-    ctx.stroke();
-  }
-
-  for (y = j = 0, ref1 = gridHeight - 1; 0 <= ref1 ? j <= ref1 : j >= ref1; y = 0 <= ref1 ? ++j : --j) {
-    ctx.beginPath();
-    ctx.moveTo(0, y * tileHeight);
-    ctx.lineTo(canvas.width, y * tileHeight);
-    ctx.stroke();
-  }
+  drawOutline(outlineColor, gridWidth, gridHeight, tileWidth, tileHeight);
 
   cells = makeGrid(0, gridWidth, gridHeight);
 
   randomCell(cells);
 
-  drawCells(cells, tileWidth, tileHeight);
+  drawCells(cells, tileWidth, tileHeight, cellColor, blightColor);
 
   cellUpdateTime = 0;
 
@@ -154,6 +169,13 @@
   cellSpawnTime = 0;
 
   cellSpawnWait = 1000;
+
+  $(window).resize(function() {
+    var ref1;
+    ref1 = changeSize(), gridWidth = ref1[0], gridHeight = ref1[1];
+    drawOutline(outlineColor, gridWidth, gridHeight, tileWidth, tileHeight);
+    return cells = makeGrid(0, gridWidth, gridHeight);
+  });
 
   update = function(timeStamp) {
     if (timeStamp - cellUpdateTime > cellUpdateWait) {
