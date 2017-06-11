@@ -2,12 +2,14 @@
   var blightColor, canvas, cellColor, cellSpawnTime, cellSpawnWait, cellUpdateTime, cellUpdateWait, cells, changeSize, ctx, drawCells, drawOutline, getSurroundingCount, gridHeight, gridWidth, makeGrid, outlineColor, randomCell, ref, tileHeight, tileWidth, update, updateCells;
 
   $('#hide-content').on('click touch', function() {
-    if ($('#content').css('visibility') === 'visible') {
-      return $('#content').css('visibility', 'hidden');
+    if ($('.container').css('visibility') === 'visible') {
+      return $('.container').css('visibility', 'hidden');
     } else {
-      return $('#content').css('visibility', 'visible');
+      return $('.container').css('visibility', 'visible');
     }
   });
+
+  $('.container').css('height', $(document).height());
 
   drawCells = function(cells, cellWidth, cellHeight, cellColor, blightColor) {
     var cell, cells_x, i, len, results, x, y;
