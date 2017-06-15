@@ -1,5 +1,6 @@
 ---
 title: All Posts
+permalink: /posts/
 ---
 
 <a href="/"><button class="btn">Home</button></a>
@@ -7,6 +8,6 @@ title: All Posts
   <h1>All of my posts</h1>
   <br>
   {% for post in site.posts %}
-    <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+    <a href="{{ post.url }}"><h3>{{ post.date | date: '%B %d' }} - {{ post.title }}</h3></a>
   {% endfor %}
 </div>

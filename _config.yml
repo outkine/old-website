@@ -5,15 +5,17 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - LICENSE
+  - README.md
 defaults:
   - scope:
       type: posts
     values:
-      permalink: /posts/:title/
+      permalink: posts/:title/
       layout: post
       css: post
   - scope:
       type: pages
     values:
-      css: page
+      css: src/page
       layout: page
