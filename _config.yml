@@ -13,7 +13,7 @@ defaults:
     values:
       permalink: posts/:title/
       layout: post
-      css: post
+      css: src/post
   - scope:
       type: pages
     values:
