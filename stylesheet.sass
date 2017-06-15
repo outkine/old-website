@@ -1,0 +1,70 @@
+---
+---
+
+@font-face
+  font-family: Moon
+  src: url('/assets/fonts/moon.otf')
+
+$border-color: rgb(204, 204, 204)
+
+h1, h2
+  font-family: Moon, sans-serif
+  text-align: center 
+
+h1
+  font-size: 3rem
+
+h2
+  font-size: 2rem
+
+h3, p
+  font-family: Playfair Display, serif
+
+h3
+  font-size: 1.6rem
+
+p
+  font-size: 1.5rem
+
+footer p
+  font-size: 80%
+
+footer
+  border-top: 2px solid $border-color
+
+.btn, .btn:active, .btn:focus, .btn:hover
+  font-family: Moon
+  font-weight: bold
+  font-size: 1.2rem
+  opacity: .8
+  position: fixed
+  margin: 1.5%
+
+img
+  margin: auto auto
+
+.col-sm img
+  display: block
+  max-width: 25%
+
+.col-sm
+  border-right: 1px solid $border-color
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15)
+  padding-top: 1%
+
+.col-sm:last-child
+  border-right: 0
+
+@media (max-width: 767px)
+  .col-sm
+    border-right: 0
+    border-top: 1px solid
+    border-bottom: 1px solid
+    border-color: rgba($border-color, .5)
+  .col-sm:first-child
+    border-top-color: rgba($border-color, 1)
+  .col-sm:last-child
+    border-bottom-color: rgba($border-color, 1)
+
+.col-sm p
+  font-size: 1.2rem
