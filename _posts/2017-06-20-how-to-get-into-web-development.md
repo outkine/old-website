@@ -6,7 +6,7 @@ title: how to get into web development
 
 *NOTE: I always recommend books over other resources.*
 
-If you're like me, you've probably procrastinated learning anything web-related because of how unordered and even 'artsy' it all seems - HT^ext^M^arkup^L^anguage^ isn't even a programming language, for crying out loud! Why would a coder waste their time on it?  
+If you're like me, you've probably procrastinated learning anything web-related because of how unordered and even 'artsy' it all seems - HT(text)M(arkup)L(anguage) isn't even a programming language, for crying out loud! Why would a coder waste their time on it?  
 
 But whether we like it or not, the web is definitely the future. *All* of us use it on a daily basis, and for many, it's *the only point to life*. We're going to have to learn it at some point, and at the speed at which things are unrolling at the moment, I think the sooner the better. 
 
