@@ -6,6 +6,112 @@ permalink: /portfolio
 <div class="absolute col">
   <a href="/"><button class="btn">Home</button></a>
 </div>
-<div class="container"><br>
-  <h1>My Porfolio</h1>
+<div class="container">
+  <br>
+  <h1>My Portfolio</h1>
+  <h3>NOTE: most of these projects can be found on <h3><a href="https://github.com/Jetmate">my github</a></h3>
+  <h2>Web Development</h3>
+  <div>
+      <h3><a href="http://ctamap.com">CTA Map</a></h3>
+      <div>
+        <div class="row">
+            <div>Node/Express, SocketIO</div>
+            <div>NGINX, PM2</div>
+        </div>
+        <div>
+          Tracks the real-time location of each vehicle on a select CTA bus route. Behind the hood, the server uses setInterval() to send a json with all locations every 30 seconds. All of this is done through SocketIO.
+        </div>
+      </div>
+  </div>
+  <div>
+    <h3><a href="http://ncpcode.org">NCP Code</a></h3>
+    <div>
+        <div class="row">
+            <div>Github Pages</div>
+        </div>
+        <div>
+          A "hacker style" website I made for my schoool's coding club.
+        </div>
+    </div>
+  </div>
+  <div>
+    <h3><a href="http://spicedating.net">Spice Dating</a></h3>
+    <div>
+        <div class="row">
+            <div>React/Webpack</div>
+            <div>OAUTH2, Flask, PostgreSQL, SQLAlchemy</div>
+            <div>NGINX, uWSGI</div>
+        </div>
+        <div>
+          A (work in progress) dating app. New users are authenticated through Google OAUTH2 and taken to fill out a questionnaire. Their responses are sent back to the server and are stored in the database.
+        </div>
+    </div>
+  </div>
+  <div>
+    <h3><a href="http://104.131.40.228:5000/">Aesthetically Pleasing Tetris</a></h3>
+    <div>
+        <div class="row">
+            <div>React/Webpack</div>
+            <div>Flask, SocketIO</div>
+            <div>NGINX, Gunicorn</div>
+        </div>
+        <div>
+          A tetris website I made for 2017 WebHacks. The most difficult part was by far creating the backend for the multiplayer mode, which relies heavily on sockets. There were 2 serious hurdles in the development process: creating a pairing system, and actually using that system to send the players their opponents' moves. I ended up using a global list as a queue, and random IDs that the server generates when a new user enters the loading page.
+        </div>
+    </div>
+  </div>
+  <div>
+    <h3><a href="http://antonoutkine.com">(this site)</a></h3>
+    <div>
+        <div class="row">
+            <div>Jekyll</div>
+            <div>Github Pages</div>
+        <div>
+        <div>
+          This sites is unique in that it uses Jekyll, which is similar to a CMS, to generate all of its pages.
+        </div>
+    </div>
+  </div>
+  <h2>Game Design</h3>
+  <div>
+    <h3><a href="http://gamejolt.com/games/ascend/256642">Ascension</a></h3>
+    <div>
+        <div class="row">
+          <div>Python</div>
+          <div>Pygame</div>
+        </div>
+        <div>
+          My most complete game - a python 2D platformer. Its unique feature is that it uses a spritesheet to create each level, with the spritesheet's pixels representing actual blocks in the game.
+        </div>
+    </div>
+  </div>
+  <div>
+    <h3><a href="http://gamejolt.com/games/gravityarena/256720">Gravity Arena</a></h3>
+    <div>C++</div>
+    <div>SFML</div>
+    <div>
+      Gravity-based space shooter.
+    </div>
+  </div>
+  <div>
+    <h3><a href="https://github.com/Jetmate/BattleArena">Spice Dating</a></h3>
+    <div class="row">
+      <div>C#</div>
+      <div>Unity</div>
+    </div>
+    <div>
+      A small 2D arena I made with Unity.
+    </div>
+  </div>
+  <h2>Misc</h3>
+  <div>
+    <h3><a href="https://github.com/Jetmate/ChessEngine">Chess Engine</a></h3>
+    <div>
+      <div>Python, Pygame</div>
+      <div>
+        Wrote it for a competition with a friend - essentially it works by simulating 4 moves into the game and choosing the one that gains the most material OR results in a better position.
+      </div>
+    </div>
+  </div>
+  <br><br><br><br>
 </div>

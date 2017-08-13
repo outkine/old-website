@@ -9,15 +9,14 @@ hideContentButton.addEventListener 'click', () ->
   else
     content.style.display = 'none'
 
-# divNames = ['.container', '#content', 'body', 'html']
-# divs = (document.querySelector divName for divName in divNames)
-# console.log(divs)
-# divs.map (div) -> div.style.height = document.documentElement.scrollHeight + 'px'
-
-console.log(document.documentElement.getBoundingClientRect())
-
 container = document.querySelector '.container'
-container.style.height = document.documentElement.scrollHeight + 'px'
+container.style.height = Math.max( 
+  document.body.scrollHeight, 
+  document.body.offsetHeight, 
+  document.documentElement.scrollHeight, 
+  document.documentElement.offsetHeight, 
+  window.innerHeight
+) + 'px'
 
 drawCells = (cells, cellWidth, cellHeight, cellColor, blightColor) ->
   for cells_x, x in cells
