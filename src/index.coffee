@@ -9,6 +9,13 @@ hideContentButton.addEventListener 'click', () ->
   else
     content.style.display = 'none'
 
+# divNames = ['.container', '#content', 'body', 'html']
+# divs = (document.querySelector divName for divName in divNames)
+# console.log(divs)
+# divs.map (div) -> div.style.height = document.documentElement.scrollHeight + 'px'
+
+console.log(document.documentElement.getBoundingClientRect())
+
 container = document.querySelector '.container'
 container.style.height = document.documentElement.scrollHeight + 'px'
 
