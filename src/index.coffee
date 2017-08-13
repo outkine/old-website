@@ -1,14 +1,16 @@
 ---
 ---
 
-$('#hide-content').on 'click touch', ->
-  if $('#content').is(':visible')
-    $('#content').hide() #css('visibility', 'hidden')
+hideContentButton = document.querySelector '#hide-content'
+content = document.querySelector '#content'
+hideContentButton.addEventListener 'click', () ->
+  if content.style.display == 'none'
+    content.style.display = 'block'
   else
-    $('#content').show() #('visibility', 'visible')
+    content.style.display = 'none'
 
-$('.container').css('height', $(document).height())
-  
+container = document.querySelector '.container'
+container.style.height = document.documentElement.scrollHeight + 'px'
 
 drawCells = (cells, cellWidth, cellHeight, cellColor, blightColor) ->
   for cells_x, x in cells
@@ -61,8 +63,8 @@ randomCell = (cells) ->
       break
 
 changeSize = ->
-  canvas.width = $(document).width()
-  canvas.height = $(document).height()
+  canvas.width = window.innerWidth
+  canvas.height = document.documentElement.scrollHeight
   return [Math.floor(canvas.width / tileWidth), Math.floor(canvas.height / tileHeight)]
 
 drawOutline = (color, gridWidth, gridHeight, tileWidth, tileHeight) ->
@@ -80,7 +82,7 @@ drawOutline = (color, gridWidth, gridHeight, tileWidth, tileHeight) ->
     ctx.stroke()
 
 
-canvas = $('canvas')[0]
+canvas = document.querySelector 'canvas'
 ctx = canvas.getContext '2d'
 
 tileWidth = 20
@@ -100,7 +102,7 @@ cellUpdateWait = 100
 cellSpawnTime = 0
 cellSpawnWait = 1000
 
-$(window).resize ->
+window.addEventListener 'resize', ->
   [gridWidth, gridHeight] = changeSize()
   drawOutline(outlineColor, gridWidth, gridHeight, tileWidth, tileHeight)
   cells = makeGrid(0, gridWidth, gridHeight)
@@ -116,7 +118,6 @@ update = (timeStamp) ->
     randomCell(cells)
 
   window.requestAnimationFrame(update)
-
 
 # randomCell(cells)
 window.requestAnimationFrame(update)
