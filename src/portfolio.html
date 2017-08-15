@@ -1,9 +1,102 @@
 ---
 title: Portfolio
 permalink: /portfolio
+projects:
+  Web development:
+    CTA Map:
+      - http://ctamap.com
+      - 
+        - Node/Express, SocketIO
+        - NGINX, PM2
+      - >
+        Tracks the real-time location of each vehicle on a select CTA bus route. Behind the hood, the server uses setInterval() to send a json with all locations every 30 seconds. All of this is done through SocketIO.
+    NCP Code:
+      - http://ncpcode.org
+      -
+        - Github Pages
+      - >
+        Tracks the real-time location of each vehicle on a select CTA bus route. Behind the hood, the server uses setInterval() to send a json with all locations every 30 seconds. All of this is done through SocketIO.
+    Spice Dating:
+      - https://spicedating.net
+      -
+        - React/Webpack
+        - OAUTH2, Flask, PostgreSQL, SQLAlchemy
+        - NGINX, uWSGI
+      - >
+        A (work in progress) dating app. New users are authenticated through Google OAUTH2 and taken to fill out a questionnaire. Their responses are sent back to the server and are stored in the database.
+    Aesthetically Pleasing Tetris:
+      - http://104.131.40.228:5000/
+      -
+        - React/Webpack
+        - Flask, SocketIO
+        - NGINX, Gunicorn
+      - >
+        A tetris website I made for 2017 WebHacks. The most difficult part was by far creating the backend for the multiplayer mode, which relies heavily on sockets. There were 2 serious hurdles in the development process: creating a pairing system, and actually using that system to send the players their opponents' moves. I ended up using a global list as a queue, and random IDs that the server generates when a new user enters the loading page.
+    (this site):
+      - http://antonoutkine.com
+      -
+        - Jekyll
+        - Github Pages
+      - >
+        This sites is unique in that it uses Jekyll, which is similar to a CMS, to generate all of its pages.
+  Game Design:
+    Ascension:
+      - http://gamejolt.com/games/ascend/256642
+      -
+        - Python
+        - Pygame
+      - >
+        My most complete game - a python 2D platformer. Its unique feature is that it uses a spritesheet to create each level, with the spritesheet's pixels representing actual blocks in the game.
+    Gravity Arena:
+      - http://gamejolt.com/games/gravityarena/256720
+      -
+        - C++
+        - SFML
+      - >
+        Gravity-based space shooter.
+    Battle Arena:
+      - https://github.com/Jetmate/BattleArena
+      -
+        - C#
+        - Unity
+      - >
+        A small 2D arena game I made with Unity.
+  Misc:
+    Chess Engine:
+      - https://github.com/Jetmate/ChessEngine
+      -
+        - Python
+        - Pygame
+      - >
+        Wrote it for a competition with a friend - essentially it works by simulating 4 moves into the game and choosing the one that gains the most material OR results in a better position.
+
 ---
 
 <div class="absolute col">
+  <a href="/"><button>Home</button></a>
+</div>
+<div class="container">
+  <br>
+  <h1>My Portfolio</h1>
+  <h3>NOTE: most of these projects can be found on <a href="https://github.com/Jetmate">my github</a></h3>
+  {% for project_type in page.projects %}
+    <h2>{{ project_type[0] }}</h2>
+    {% for project in project_type[1] %}
+    <h3><a href={{ project[1][0] }}>{{ project[0] }}</a></h3>
+    <div class="portfolio-info">
+      <div class="row-l portfolio-tags">
+        {% for tag in project[1][1] %}
+          <p class="portfolio-tag">{{ tag }}</p>
+        {% endfor %} 
+      </div>
+      <p>{{ project[1][2] }}</p>
+    </div>
+    {% endfor %}
+  {% endfor %}
+  <br><br><br>
+</div>
+
+<!-- <div class="absolute col">
   <a href="/"><button class="btn">Home</button></a>
 </div>
 <div class="container">
@@ -94,7 +187,7 @@ permalink: /portfolio
     </div>
   </div>
   <div>
-    <h3><a href="https://github.com/Jetmate/BattleArena">Spice Dating</a></h3>
+    <h3><a href="https://github.com/Jetmate/BattleArena">Battle Arena</a></h3>
     <div class="row">
       <div>C#</div>
       <div>Unity</div>
@@ -115,3 +208,4 @@ permalink: /portfolio
   </div>
   <br><br><br><br>
 </div>
+ -->

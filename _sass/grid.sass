@@ -4,21 +4,24 @@
 .absolute
   position: absolute
 
-.col
+.col 
   display: flex
   justify-content: space-around
   flex-direction: column
 
-.row
+[class*="row"] 
   display: flex
   justify-content: space-evenly
   flex-direction: row
-  // align-items: center
 
 @media(max-width: 500px)
   .row
     flex-direction: column
  
+@media(max-width: 1000px)
+  .row-l
+    flex-direction: column
+
 .el-2 
   flex: 0 0 50%
 
