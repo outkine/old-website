@@ -5,25 +5,27 @@ projects:
   Web development:
     CTA Map:
       - http://ctamap.com
-      - 
+      -
         - Node/Express, SocketIO
         - NGINX, PM2
       - >
         Tracks the real-time location of each vehicle on a select CTA bus route. Behind the hood, the server uses setInterval() to send a json with all locations every 30 seconds. All of this is done through SocketIO.
-    NCP Code:
-      - http://ncpcode.org
-      -
-        - Github Pages
-      - >
-        Tracks the real-time location of each vehicle on a select CTA bus route. Behind the hood, the server uses setInterval() to send a json with all locations every 30 seconds. All of this is done through SocketIO.
     Spice Dating:
-      - https://spicedating.net
+      - http://spicedating.net
       -
         - React/Webpack
         - OAUTH2, Flask, PostgreSQL, SQLAlchemy
         - NGINX, uWSGI
       - >
         A (work in progress) dating app. New users are authenticated through Google OAUTH2 and taken to fill out a questionnaire. Their responses are sent back to the server and are stored in the database.
+    Factions.io:
+      - http://104.131.40.228:3001/
+      -
+        - Canvas/React/Redux/Webpack
+        - Express, SocketIO
+        - NGINX
+      - >
+        A (work in progress) io game. Mainly relies on websockets to transmit all relevant information to all players - developing is mostly about figuring out a balance between a network load (via sockets) and a load on each user's computer, as the html Canvas can be pretty slow. Also includes a dope terrain generation algorithm.
     Aesthetically Pleasing Tetris:
       - http://104.131.40.228:5000/
       -
@@ -39,6 +41,12 @@ projects:
         - Github Pages
       - >
         This sites is unique in that it uses Jekyll, which is similar to a CMS, to generate all of its pages.
+    NCP Code:
+      - http://ncpcode.org
+      -
+        - Github Pages
+      - >
+        A website I made for my coding club.
   Game Design:
     Ascension:
       - http://gamejolt.com/games/ascend/256642
@@ -87,7 +95,7 @@ projects:
       <div class="row-l portfolio-tags">
         {% for tag in project[1][1] %}
           <p class="portfolio-tag">{{ tag }}</p>
-        {% endfor %} 
+        {% endfor %}
       </div>
       <p>{{ project[1][2] }}</p>
     </div>
